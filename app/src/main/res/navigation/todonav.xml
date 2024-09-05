@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/todonav"
+    app:startDestination="@id/homePage">
+
+    <fragment
+        android:id="@+id/homePage"
+        android:name="com.example.todoapp.ui.fragments.HomePage"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePage_to_registerPage"
+            app:destination="@id/registerPage" />
+        <action
+            android:id="@+id/action_homePage_to_detailsPage"
+            app:destination="@id/detailsPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsPage"
+        android:name="com.example.todoapp.ui.fragments.DetailsPage"
+        android:label="fragment_details_page"
+        tools:layout="@layout/fragment_details_page" >
+        <argument
+            android:name="info"
+            app:argType="com.example.todoapp.data.entity.ToDo" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerPage"
+        android:name="com.example.todoapp.ui.fragments.RegisterPage"
+        android:label="fragment_register_page"
+        tools:layout="@layout/fragment_register_page" />
+</navigation>
